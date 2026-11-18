@@ -173,8 +173,8 @@ img {
   top: 0;
   z-index: 100;
   background-color: var(--header-bg);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   border-bottom: 1px solid var(--border);
 }
 
@@ -392,6 +392,13 @@ main {
   gap: 24px;
   padding: 36px 0;
   border-top: 1px solid var(--border);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
+}
+
+.year-section[hidden],
+.project-item[hidden] {
+  display: none;
 }
 
 .year-section:first-child {
@@ -627,6 +634,8 @@ main {
 
 .gallery-figure {
   width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
 }
 
 .gallery-trigger {

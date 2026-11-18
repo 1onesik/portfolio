@@ -6,6 +6,7 @@
 
   let currentCategory = "all";
   let currentProject = null;
+  let hasRenderedGrid = false;
   let lightboxImages = [];
   let lightboxIndex = 0;
 
@@ -75,9 +76,23 @@
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
   }
 
-  function getCandidateUrls(imgEntry) {
+  function getOptimizedWixUrl(url, variant) {
+    if (typeof url !== "string" || !url.includes("static.wixstatic.com/media/")) {
+      return url;
+    }
+    if (variant === "thumb") {
+      return `${url}/v1/fit/w_720,h_405,q_75/file.webp`;
+    }
+    if (variant === "lightbox") {
+      return `${url}/v1/fit/w_2200,h_2200,q_88/file.webp`;
+    }
+    return `${url}/v1/fit/w_1400,h_1400,q_82/file.webp`;
+  }
+
+  function getCandidateUrls(imgEntry, variant) {
     if (typeof imgEntry === "string") {
-      return [imgEntry];
+      const optimized = getOptimizedWixUrl(imgEntry, variant);
+      return optimized !== imgEntry ? [optimized, imgEntry] : [imgEntry];
     }
     const folder = imgEntry.localFolder;
     const n = imgEntry.index;
@@ -85,15 +100,10 @@
     const rawPaths = [
       `${folder}/${n}.jpg`,
       `${folder}/${n}.png`,
-      `${folder}/${n}.JPG`,
-      `${folder}/${n}.PNG`,
-      `${folder}/${n}.jpeg`,
       `${folder}/${pad}.jpg`,
       `${folder}/${pad}.png`,
       `images/${folder}/${n}.jpg`,
-      `images/${folder}/${n}.png`,
-      `images/${folder}/${pad}.jpg`,
-      `images/${folder}/${pad}.png`
+      `images/${folder}/${n}.png`
     ];
     return rawPaths.map((p) => encodeURI(p));
   }
@@ -101,7 +111,7 @@
   function createProjectImage(imgEntry, altText, titleForFallback, options) {
     const opts = options || {};
     const img = document.createElement("img");
-    const candidates = getCandidateUrls(imgEntry);
+    const candidates = getCandidateUrls(imgEntry, opts.variant || "detail");
     let attempt = 0;
 
     img.alt = altText;
@@ -190,20 +200,14 @@
     });
   }
 
-  function renderProjectsList() {
+  function buildProjectsGridOnce() {
+    if (hasRenderedGrid) return;
     els.projectsContainer.innerHTML = "";
-    let totalVisible = 0;
     let renderedCount = 0;
 
     YEARS.forEach((yr) => {
-      const items = PROJECTS.filter((p) => {
-        const matchYear = p.year === yr;
-        const matchCat = currentCategory === "all" || p.category.includes(currentCategory);
-        return matchYear && matchCat;
-      });
-
+      const items = PROJECTS.filter((p) => p.year === yr);
       if (items.length === 0) return;
-      totalVisible += items.length;
 
       const section = document.createElement("section");
       section.className = "year-section";
@@ -219,6 +223,7 @@
       items.forEach((p) => {
         const article = document.createElement("article");
         article.className = "project-item";
+        article.dataset.categories = (p.category || []).join(",");
 
         const link = document.createElement("a");
         link.className = "project-card-link";
@@ -232,6 +237,7 @@
           const isFirst = renderedCount === 0;
           const isAboveFold = renderedCount < 3;
           const img = createProjectImage(p.images[0], p.title, p.title, {
+            variant: "thumb",
             highPriority: isFirst,
             lazy: !isAboveFold
           });
@@ -268,6 +274,36 @@
       section.appendChild(heading);
       section.appendChild(grid);
       els.projectsContainer.appendChild(section);
+    });
+
+    hasRenderedGrid = true;
+  }
+
+  function renderProjectsList() {
+    buildProjectsGridOnce();
+
+    let totalVisible = 0;
+    let firstVisibleSection = true;
+
+    els.projectsContainer.querySelectorAll(".year-section").forEach((section) => {
+      let sectionVisibleCount = 0;
+
+      section.querySelectorAll(".project-item").forEach((item) => {
+        const cats = item.dataset.categories ? item.dataset.categories.split(",") : [];
+        const match = currentCategory === "all" || cats.includes(currentCategory);
+        item.hidden = !match;
+        if (match) {
+          sectionVisibleCount += 1;
+          totalVisible += 1;
+        }
+      });
+
+      section.hidden = sectionVisibleCount === 0;
+      if (sectionVisibleCount > 0) {
+        section.style.borderTop = firstVisibleSection ? "none" : "";
+        section.style.paddingTop = firstVisibleSection ? "0" : "";
+        firstVisibleSection = false;
+      }
     });
 
     els.projectCount.textContent = `${totalVisible} works`;
@@ -326,6 +362,7 @@
       btn.setAttribute("aria-label", `${project.title} 이미지 ${idx + 1} 크게 보기`);
 
       const img = createProjectImage(imgEntry, `${project.title} — ${idx + 1}`, project.title, {
+        variant: "detail",
         highPriority: idx === 0,
         lazy: idx >= 2
       });
@@ -460,8 +497,9 @@
     const item = lightboxImages[lightboxIndex];
     if (!item) return;
 
-    const currentSrc = item.imgEl ? item.imgEl.currentSrc || item.imgEl.src : "";
-    els.lightboxImg.src = currentSrc || getCandidateUrls(item.entry)[0];
+    const candidates = getCandidateUrls(item.entry, "lightbox");
+    const fallbackSrc = item.imgEl ? item.imgEl.currentSrc || item.imgEl.src : "";
+    els.lightboxImg.src = typeof item.entry === "string" ? candidates[0] : (fallbackSrc || candidates[0]);
     els.lightboxImg.alt = item.caption;
     els.lightboxCaption.textContent = item.caption;
     els.lightboxIndex.textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
