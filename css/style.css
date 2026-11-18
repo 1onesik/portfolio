@@ -718,7 +718,7 @@ main {
 
 .info-row {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 16px;
   font-size: 14px;
   line-height: 1.6;
