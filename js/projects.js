@@ -924,6 +924,47 @@
         WIX + "ee4b42_db98b71170c6497ba3c82133bd49d3aa~mv2.jpg",
         WIX + "ee4b42_b135c0e3f64e48f1b5b4f3eb7d0a31a6~mv2.png"
       ]
+    },
+    {
+      slug: "gg---house",
+      year: "2022",
+      category: ["housing"],
+      title: "고기동 단독주택",
+      status: "aborted",
+      specs: [
+        "Location : Suji-gu, Yongin-si, Gyeonggi-do, Republic of Korea",
+        "Design : 2021.11 - 2022.08",
+        "Completion : Aborted",
+        "Site area : 413.03 ㎡",
+        "Building area : 114.84 ㎡",
+        "Total floor area : 218.06 ㎡",
+        "Floor : 2F",
+        "Building use : Housing",
+        "Structure : Light weight wood framing system",
+        "Exterior finish : Fiber cement siding",
+        "Interior finish : Paint"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_e93685bfda9a4ad989656a2219799147~mv2.png",
+        WIX + "ee4b42_515f0dd020b140fbb3af8b6a7364beef~mv2.png",
+        WIX + "ee4b42_eac7628d744445ea9854b81a096223b7~mv2.png",
+        WIX + "ee4b42_7faa71208f494edda6100553a3c2c784~mv2.png",
+        WIX + "ee4b42_fdd14b8d0bd24724a869935202ffaaf4~mv2.png",
+        WIX + "ee4b42_330abc19cc034e4aa3178af3546b62df~mv2.png",
+        WIX + "ee4b42_15fc77a9f2e643a48b7bb132a3ef2fe6~mv2.png",
+        WIX + "ee4b42_677e4ee0060644909969f13fe2330e61~mv2.png",
+        WIX + "ee4b42_5c5d2d384b314347bd7babaf4bd347d9~mv2.png",
+        WIX + "ee4b42_971b014f3caf41fda9202068e7e3ef70~mv2.png",
+        WIX + "ee4b42_980334f475e94eb0bd11bc25d40c42f0~mv2.png",
+        WIX + "ee4b42_1c37a3f68a8346d8b57be79bd95ee04d~mv2.png",
+        WIX + "ee4b42_254b9d428eea4b018411a4b30288fe72~mv2.png",
+        WIX + "ee4b42_4deb2c61b18d42f0afc1f25ed887afdd~mv2.png",
+        WIX + "ee4b42_b672ae3f39fb441e98f2ff1ef889561c~mv2.png",
+        WIX + "ee4b42_b7b207ea5e0842b69e3ee8a57c58f962~mv2.png",
+        WIX + "ee4b42_df99d65641774d4d9fdf499884151d28~mv2.png",
+        WIX + "ee4b42_f752efe7ec184001ac9595a05af752e5~mv2.png"
+      ]
     }
   ];
 })(window);
