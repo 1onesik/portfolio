@@ -1,0 +1,929 @@
+(function (global) {
+  "use strict";
+
+  const WIX = "https://static.wixstatic.com/media/";
+
+  function localSeq(folderName, count) {
+    const list = [];
+    for (let i = 1; i <= count; i++) {
+      list.push({ localFolder: folderName, index: i });
+    }
+    return list;
+  }
+
+  global.PORTFOLIO_PROJECTS = [
+    // 2026 (3건 — 로컬 이미지 폴더 연동)
+    {
+      slug: "ys---school-2026",
+      year: "2026",
+      category: ["public", "interior"],
+      title: "용산고등학교 고교학점제 재구조화",
+      status: "in progress",
+      specs: [
+        "Location : 60, Duteopbawi-ro, Yongsan-gu, Seoul, Korea",
+        "Design : 2026.03 -",
+        "Completion : -",
+        "Floor area : -㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint"
+      ],
+      notes: [],
+      images: localSeq("H_2026-03_용산고 고교학점제", 7)
+    },
+    {
+      slug: "dg---school-2026",
+      year: "2026",
+      category: ["public", "interior"],
+      title: "당곡고등학교 고교학점제 재구조화",
+      status: "in progress",
+      specs: [
+        "Location : 108, Bongcheon-ro 21-gil, Gwanak-gu, Seoul, Korea",
+        "Design : 2026.03 -",
+        "Completion : -",
+        "Floor area : -㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint"
+      ],
+      notes: [],
+      images: localSeq("H_2026-05_당곡고 고교학점제", 9)
+    },
+    {
+      slug: "sw---school-2026",
+      year: "2026",
+      category: ["public", "interior"],
+      title: "강동송파수학과학융합교육센터",
+      status: "completed",
+      specs: [
+        "Location : 281, Dongnam-ro, Songpa-gu, Seoul, Korea",
+        "Design : 2026.03 - 2026.06",
+        "Completion : completed",
+        "Total floor area : 180.18㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint, Interior film"
+      ],
+      notes: [],
+      images: localSeq("H_2026-01_강동송파수과융합센터", 12)
+    },
+
+    // 2025 (7건)
+    {
+      slug: "sy---housing",
+      year: "2025",
+      category: ["housing"],
+      title: "종로구 신영동 공동주택 단지",
+      status: "in progress",
+      specs: [
+        "Location : 211-1, Sinyeong-dong, Jongno-gu, Seoul, Korea",
+        "Design : 2025.01-",
+        "Completion : in progress",
+        "Site area : 3,049 ㎡",
+        "Building area : 1,081.56 ㎡",
+        "Total floor area : 5,310.31 ㎡",
+        "Floor : B2F / 4F",
+        "Building use : Housing",
+        "Structure : RC",
+        "Exterior finish : Stone tile",
+        "Interior finish : -"
+      ],
+      notes: ["with JIEUM architects"],
+      images: [
+        WIX + "ee4b42_9e8656fc2257438f8780bfa3be8d8562~mv2.jpg",
+        WIX + "ee4b42_c72e8359a923486ab981922409d2a935~mv2.png",
+        WIX + "ee4b42_f9a7fe685128456b91bb93c79c15b6c0~mv2.png",
+        WIX + "ee4b42_f488b4c833744d2ca85b0fb19dbbd6bf~mv2.png",
+        WIX + "ee4b42_469ff286eb244b0a8d0122e36884b094~mv2.png",
+        WIX + "ee4b42_b45f1400c434467fa59210f03b373bcd~mv2.png",
+        WIX + "ee4b42_9c283c55b6ef4fb08457138535591869~mv2.png"
+      ]
+    },
+    {
+      slug: "창녕박물관-",
+      year: "2025",
+      category: ["public", "competition"],
+      title: "창녕박물관 복합문화관 증축",
+      status: "1st prize",
+      specs: [
+        "Location : Changnyeong-eup, Changnyeong-gun, Gyeongsangnam-do, Korea",
+        "Design : 2025.05 - 06",
+        "Completion : 1st prize",
+        "Site area : 8,943.00㎡",
+        "Building area : 1,240.92㎡",
+        "Total floor area : 2,686.43㎡",
+        "Floor : B1F / 1F",
+        "Building use : Public",
+        "Structure : RC",
+        "Exterior finish : Stone Tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_aa72006cd7484d8d8f7363b2353cd94b~mv2.jpg",
+        WIX + "ee4b42_268fe50c3f7b4e79816fdc732ca1707a~mv2.png",
+        WIX + "ee4b42_23e985d7c1004e729cff554df2293980~mv2.png",
+        WIX + "ee4b42_2f41606b74084b2180befa25173fed7f~mv2.png",
+        WIX + "ee4b42_28f8d83f1439408189a46adc1e576070~mv2.png",
+        WIX + "ee4b42_041a74ace83e4425abd24a93b7bab015~mv2.png",
+        WIX + "ee4b42_b8a91ad4a1cc492593b9bab53019edff~mv2.png"
+      ]
+    },
+    {
+      slug: "영축산-산림복합체험센터",
+      year: "2025",
+      category: ["public", "competition"],
+      title: "영축산 산림복합체험센터",
+      status: "out of selection",
+      specs: [
+        "Location : 78, Wolgye-ro 44ga-gil, Nowon-gu, Seoul, Korea",
+        "Design : 2025.04",
+        "Completion : out of selection",
+        "Site area : 2,383㎡",
+        "Building area : 431.85㎡",
+        "Total floor area : 620.98㎡",
+        "Floor : 2F",
+        "Building use : Public",
+        "Structure : RC + Timber Structure",
+        "Exterior finish : UHPC + Wood panel",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_f7c25ffcf01f4b69b8969295bf2a24c1~mv2.jpg",
+        WIX + "ee4b42_cc348cde71db4d72a5fa965203c03e1a~mv2.jpg",
+        WIX + "ee4b42_05233cd720e54f4d8521040669d55a29~mv2.jpg",
+        WIX + "ee4b42_fa0d333939bc4f02b12343b5ad258323~mv2.jpg",
+        WIX + "ee4b42_3215b80dc9d84944b8a171dbb3b5459f~mv2.jpg",
+        WIX + "ee4b42_ee02f5e70fd443bb810a84f6597613b8~mv2.jpg",
+        WIX + "ee4b42_eff425ce2d7c484e9b510913b6d12af3~mv2.jpg",
+        WIX + "ee4b42_0bd41bbecb0a45a2b3f555a51f97b470~mv2.jpg",
+        WIX + "ee4b42_87cad2e11f05400bab908e52c9467ca3~mv2.jpg",
+        WIX + "ee4b42_d7165f1ecef648ad8dc7d49fc2e67ea9~mv2.jpg",
+        WIX + "ee4b42_912dc2f519f34918b356e8d690f6bad8~mv2.jpg",
+        WIX + "ee4b42_cbe4a3ca4a0b479497e558347f2a312a~mv2.jpg",
+        WIX + "ee4b42_818e1609eaec4e79a9e165955c689bba~mv2.jpg"
+      ]
+    },
+    {
+      slug: "sw---school",
+      year: "2025",
+      category: ["public", "interior"],
+      title: "서부수학과학융합교육센터",
+      status: "completed",
+      specs: [
+        "Location : 34, World Cup-ro 36-gil, Mapo-gu, Seoul, Korea",
+        "Design : 2025.05 - 2025.06",
+        "Completion : completed",
+        "Total floor area : 180.18㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint, Interior film"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_bb75045fba604363874d543e1733bd96~mv2.png",
+        WIX + "ee4b42_f0eaa9b0dd9948419e8ab15db30210c9~mv2.png",
+        WIX + "ee4b42_6f8d28befd2c470eb93f3a02325edbe1~mv2.png",
+        WIX + "ee4b42_c983249292e84b4ca8ebcdc3b39c8222~mv2.png",
+        WIX + "ee4b42_f9d746655fc548d0b61b2b6d036b3aa3~mv2.png",
+        WIX + "ee4b42_86574fe9f26a498db80a532f7449d7ac~mv2.png",
+        WIX + "ee4b42_f03e2d1b4c424a0abf63177cadfb0f64~mv2.png",
+        WIX + "ee4b42_15603ec660634a399efd8b3a94cb4fcc~mv2.png",
+        WIX + "ee4b42_e8e1420de3df47b2a1b5e082da658472~mv2.png",
+        WIX + "ee4b42_54faee5bfcef46dc83db61c0885f8f0d~mv2.png",
+        WIX + "ee4b42_fdefa2880a24459f8ef656d318e66185~mv2.png",
+        WIX + "ee4b42_a70380aadf734544bde00a707d56ca12~mv2.png",
+        WIX + "ee4b42_cec1798de5f340509965a0c6e74b43c4~mv2.png",
+        WIX + "ee4b42_734614a7cdf7464999db4bcb8ce04606~mv2.png",
+        WIX + "ee4b42_a3a240ddd49949d3b919e6ae0a95e565~mv2.png",
+        WIX + "ee4b42_802dba175453404a938245bf53e646d8~mv2.png",
+        WIX + "ee4b42_ea56bca041344913a55be71165f70d8c~mv2.png"
+      ]
+    },
+    {
+      slug: "kgg---school",
+      year: "2025",
+      category: ["public", "interior"],
+      title: "경기여자고등학교 고교학점제 재구조화",
+      status: "completed",
+      specs: [
+        "Location : 29 Samseong-ro, Gangnam-gu, Seoul, Korea",
+        "Design : 2025.06 - 2025.12",
+        "Completion : -",
+        "Floor area : -㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint"
+      ],
+      notes: ["with ONJAE architects", "photo by Roh"],
+      images: [
+        WIX + "ee4b42_6aa18d5c12424f9d8a82d7c0edd92984~mv2.jpg",
+        WIX + "ee4b42_002bcdfa5f8240788d6f81ae4d5723b6~mv2.jpg",
+        WIX + "ee4b42_ba1847e12b9e4691aa9d2336e0709714~mv2.jpg",
+        WIX + "ee4b42_567e42412f004ca89a54515de1ef0430~mv2.jpg",
+        WIX + "ee4b42_f9fcf2a4aa1449878c49c1821f948880~mv2.jpg",
+        WIX + "ee4b42_be9b2976288546d5b1e8bee5e8f769da~mv2.jpg",
+        WIX + "ee4b42_0ac8d49f2f724d36bb6580f62d38e4de~mv2.jpg",
+        WIX + "ee4b42_4859f4b354634522be7c3a0c278fb9e8~mv2.jpg",
+        WIX + "ee4b42_d5e403b2655b4a4a84797c7eb890d700~mv2.jpg",
+        WIX + "ee4b42_f5cc5a4b53cf43ae826395bdee88c0a5~mv2.jpg",
+        WIX + "ee4b42_c9612aa5d544479d9c54399296b47ca0~mv2.jpg",
+        WIX + "ee4b42_fb6539d9738b4752804fe9bf07c6bda3~mv2.jpg",
+        WIX + "ee4b42_c98885d49b3b443c87b604631e992c20~mv2.jpg",
+        WIX + "ee4b42_d7ed7fe0ac344cc7beacedc6de9ab3ab~mv2.jpg",
+        WIX + "ee4b42_aaf15724d06543b69298fd5a1e06e3d2~mv2.jpg",
+        WIX + "ee4b42_de84aebaa96943f0b364aa25d9d938fb~mv2.jpg",
+        WIX + "ee4b42_2f6932c3d1314a57921ae8518bf807d2~mv2.jpg",
+        WIX + "ee4b42_3dd745538f2741b3aaddd010d9ac08c4~mv2.jpg",
+        WIX + "ee4b42_f28b6a9bdaa547128936851733a944d5~mv2.jpg",
+        WIX + "ee4b42_62d4576ad5854605a8a9d3ae8dccb3ac~mv2.jpg",
+        WIX + "ee4b42_ca597874443d4da6845a783bf8deb467~mv2.jpg",
+        WIX + "ee4b42_fe48e007c8c04f2ca37b53830914b259~mv2.jpg",
+        WIX + "ee4b42_fa8a2e49ef15468ea168950b19c36410~mv2.jpg",
+        WIX + "ee4b42_c335eb20ea514470b51254985c72453b~mv2.jpg",
+        WIX + "ee4b42_e4e9b28316e343a0b57b1a1b18cbb51d~mv2.jpg",
+        WIX + "ee4b42_edc54d8afa5541568be6f0daf0344743~mv2.jpg",
+        WIX + "ee4b42_55f35d97dd56464d9ef5505bd6ecf2f4~mv2.jpg",
+        WIX + "ee4b42_76fa95f1a827479f854eef79ca6b5a83~mv2.jpg",
+        WIX + "ee4b42_a4cc04e40656426c9df3ea7a31552e0f~mv2.jpg",
+        WIX + "ee4b42_7bf7359865a7446f8a0a08747a989a84~mv2.jpg",
+        WIX + "ee4b42_20d53fc2d9ff48a9b6e989a00b939443~mv2.jpg",
+        WIX + "ee4b42_f74785b96b3b4a14ac27e041d1b30260~mv2.jpg",
+        WIX + "ee4b42_c59dce6ed4b94be08b05fd7602af9e3e~mv2.jpg",
+        WIX + "ee4b42_7ed3b42de2564573a8e90b9d0399185f~mv2.jpg",
+        WIX + "ee4b42_5cebaffb2fb243788a42cd0df593088f~mv2.png",
+        WIX + "ee4b42_4791c7014d844bcda6d2f01950706696~mv2.png",
+        WIX + "ee4b42_b9eddc03575942eba20ebd3d33202fc3~mv2.png",
+        WIX + "ee4b42_240c421874b24b139e58f51d8915b728~mv2.png",
+        WIX + "ee4b42_5a63529fcc8f45da96cfc7eac58dbbe1~mv2.png",
+        WIX + "ee4b42_7c2d5ca450f54a418409191699229f94~mv2.png"
+      ]
+    },
+    {
+      slug: "ydp---school",
+      year: "2025",
+      category: ["public", "interior"],
+      title: "영등포중학교 고교학점제 재구조화",
+      status: "completed",
+      specs: [
+        "Location : 5, Deungyong-ro 8-gil, Dongjak-gu, Seoul, Korea",
+        "Design : 2025.06 - 2025.06",
+        "Completion : in progress",
+        "Total floor area : -㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint, Interior film"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_031e7994b4594db086fc81eb3a12d6f4~mv2.jpg",
+        WIX + "ee4b42_14679c6191864b2c9c7f38eddf68d0c8~mv2.png",
+        WIX + "ee4b42_9a1a7013062b4868a0ebf0193b3a1993~mv2.png",
+        WIX + "ee4b42_25b063d85ef34304b57f6deac090d98d~mv2.png",
+        WIX + "ee4b42_98112f25caa74cd6ba0a2765929ccaef~mv2.png",
+        WIX + "ee4b42_9ac5eea9e6e0427a8467a18a789f1d37~mv2.png",
+        WIX + "ee4b42_d2dfcdca28974a61ab7a1867a1247aaf~mv2.png",
+        WIX + "ee4b42_ee04dcb978e14b3a8eed48e1ea082768~mv2.png"
+      ]
+    },
+    {
+      slug: "sdrc---headquarter",
+      year: "2025",
+      category: ["interior", "commercial"],
+      title: "신도리코 본사 리뉴얼",
+      status: "in progress",
+      specs: [
+        "Location : 3, Seongsui-ro 24-gil, Seongdong-gu, Seoul, Korea",
+        "Design : 2025.04 -",
+        "Completion : -",
+        "Floor area : 18,121.94㎡",
+        "Building use : Office, commercial",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: localSeq("H_2025-12_신도리코 서울본사 리뉴얼", 14)
+    },
+
+    // 2024 (5건)
+    {
+      slug: "db---forestpark",
+      year: "2024",
+      category: ["commercial"],
+      title: "제주자연체험파크",
+      status: "in progress",
+      specs: [
+        "Location : Dongbok-ri, Gujwa-eup, Jeju-si, Jeju-do, Korea",
+        "Design : 2019.06 -",
+        "Completion : In progress",
+        "Site area : 744,480 ㎡",
+        "Building use : Commercial",
+        "Structure : Variation",
+        "Exterior finish : Variation",
+        "Interior finish : Variation"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_fc3ed55f8caf4b42a91ae6ef5d6839c6~mv2.jpg",
+        WIX + "ee4b42_950c971950004676965d6e83107b39d7~mv2.png",
+        WIX + "ee4b42_dc66db21af21460ea590bac659d978df~mv2.png",
+        WIX + "ee4b42_1f7e50a94bf343dd8188734c7055de24~mv2.png",
+        WIX + "ee4b42_f4ca559193514e4ca14043bac76ab533~mv2.jpg",
+        WIX + "ee4b42_a068cfa56351426fae4bc411ceb3cb1b~mv2.jpg",
+        WIX + "ee4b42_e6836061a50c4c51a3781ad3ac442c66~mv2.jpg",
+        WIX + "ee4b42_e3093251ca33410a959fdfecea211a0f~mv2.jpg",
+        WIX + "ee4b42_8eb0fab64e3942bca7b3a18c2464e61c~mv2.png",
+        WIX + "ee4b42_ba4b8ed9eca24bdab1be28a058d90f87~mv2.png",
+        WIX + "ee4b42_f5d0e00df206475cbc13bf558a281b48~mv2.png",
+        WIX + "ee4b42_7a1dfb39bcf94e5bb3751678fd7a84b0~mv2.png",
+        WIX + "ee4b42_6f0d0dbd7a7d45ae86f76e5f13c6cfbd~mv2.jpg",
+        WIX + "ee4b42_3bed98047dc74e1a9c5c6f026ebba639~mv2.jpg",
+        WIX + "ee4b42_8de6879d0c4d4e049e6c5f4ae7d5816c~mv2.jpg",
+        WIX + "ee4b42_da3ceb52d96d4d10a70214b46d353517~mv2.jpg",
+        WIX + "ee4b42_67e8372158fb43ab810db77417d3a53b~mv2.png",
+        WIX + "ee4b42_9159d48f773843e68a9aac73dda2c87d~mv2.png",
+        WIX + "ee4b42_fccbf7e454534afe92b5238cad450567~mv2.png",
+        WIX + "ee4b42_ee1802c45c4142fd9f5e620cb4fddf5e~mv2.png",
+        WIX + "ee4b42_053def3ed45045fb8fca66b3456a78f1~mv2.png",
+        WIX + "ee4b42_9740f8a8003f4ee597d0646431fb807a~mv2.png",
+        WIX + "ee4b42_e2d186dbb8c244fcbf41743f1df31feb~mv2.png",
+        WIX + "ee4b42_7691b8c484f54670bc6eee10662a0a7a~mv2.png",
+        WIX + "ee4b42_5e8d3cca4581454d99712d7797e65404~mv2.png",
+        WIX + "ee4b42_6da98878c7ee4fa0b42129cce441e436~mv2.png",
+        WIX + "ee4b42_d6c9ee86aee341ab8dc264e62fdf0a55~mv2.png",
+        WIX + "ee4b42_f8ce36ff564c44d1b1112b5f012222bf~mv2.png",
+        WIX + "ee4b42_daaac36ce19a4f74908d3ea7f7dafb0d~mv2.png",
+        WIX + "ee4b42_f38a2e6be9a249889e8d3fbf08401acd~mv2.png",
+        WIX + "ee4b42_1620b4277e344e9eb08b841f97527456~mv2.png",
+        WIX + "ee4b42_8677dddbc2024b38ba8a4e67092df5fb~mv2.png",
+        WIX + "ee4b42_870a53485d6c4c07848956570f20c40e~mv2.png",
+        WIX + "ee4b42_e309f34bb04744eb85ae98b04e21ee6a~mv2.png",
+        WIX + "ee4b42_5dcbd2fa96444aa296afb234b3c93a00~mv2.png",
+        WIX + "ee4b42_62d58bebba7c4cc08bd05e2712a6b1e4~mv2.png",
+        WIX + "ee4b42_77d10b29a74848e4aba24e97087c700b~mv2.png",
+        WIX + "ee4b42_881c32d0799c4366837ca115a788d05d~mv2.png",
+        WIX + "ee4b42_bf84c1539b3449bba9ea73ff07708493~mv2.png",
+        WIX + "ee4b42_3a71a766cb46407991535190218409ba~mv2.png",
+        WIX + "ee4b42_3a88c1cb228c4b56aa4b231054cfa70c~mv2.png",
+        WIX + "ee4b42_24c103f231dd4fb68b7b3faa2d9e126a~mv2.png"
+      ]
+    },
+    {
+      slug: "js-school",
+      year: "2024",
+      category: ["public", "interior"],
+      title: "장승중학교 꿈담교실",
+      status: "completed",
+      specs: [
+        "Location : 25, Jangseungbaegi-ro 10ga-gil, Dongjak-gu, Seoul, Korea",
+        "Design : 2024.06 - 2025.02",
+        "Completion : 2025.02",
+        "Floor area : 189.55㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_b592f794efea4eaca354aee51ed58e0d~mv2.png",
+        WIX + "ee4b42_d13bae00214f4e27913873b244b13b55~mv2.png",
+        WIX + "ee4b42_98b05d0cb4674bec8ba569bf9057ca8e~mv2.png",
+        WIX + "ee4b42_c11ada18f2ca4850a93adf78e5da788d~mv2.png",
+        WIX + "ee4b42_29008a35363c4287a6b3090559dcf523~mv2.png",
+        WIX + "ee4b42_aa6a181941c2490baa1e00c3baeb4897~mv2.png",
+        WIX + "ee4b42_efed5e4b418c4d85b230603432dbb517~mv2.jpg",
+        WIX + "ee4b42_1b0a8799eaf748c6a0cd458b032b7414~mv2.jpg",
+        WIX + "ee4b42_5ed93cda87d84d00840334e2b3866511~mv2.jpg",
+        WIX + "ee4b42_3536da92945b431995be68938ef3aa66~mv2.jpg",
+        WIX + "ee4b42_2598c20075cc4bcda7f6c5a491a1200f~mv2.jpg"
+      ]
+    },
+    {
+      slug: "개봉1동-어울림복합플랫폼",
+      year: "2024",
+      category: ["public", "competition"],
+      title: "개봉1동 어울림복합플랫폼",
+      status: "out of selection",
+      specs: [
+        "Location : Gaebong-dong, Guro-gu, Seoul",
+        "Design : 2024.04 - 05",
+        "Completion : out of selection",
+        "Site area : 448.83㎡",
+        "Building area : 251.00㎡",
+        "Total floor area : 1,216.12㎡",
+        "Floor : B1F / 6F",
+        "Building use : Public",
+        "Structure : RC",
+        "Exterior finish : Brick Tile, Stone Tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_9fc70b96496f4c67ba8208d34f001ab6~mv2.png",
+        WIX + "ee4b42_c496d660770543fc94b4927aaf1b8a09~mv2.png",
+        WIX + "ee4b42_380fe86f26bb43bd8492a8af9ab465d0~mv2.png",
+        WIX + "ee4b42_e67df078193d4e879e10dd81444ca439~mv2.png",
+        WIX + "ee4b42_4b59cf4de59d47868cd6804278d04bc0~mv2.png",
+        WIX + "ee4b42_fc93b8cb04744b918c0873682849fee4~mv2.png",
+        WIX + "ee4b42_f1a2e9a42e934e41887392edfa6236ad~mv2.png",
+        WIX + "ee4b42_d50dcc35947e4980bd2c39bea5cfc804~mv2.png",
+        WIX + "ee4b42_6620c5959e584d8c903fefac18523e75~mv2.png",
+        WIX + "ee4b42_db2ba3de189a43c28ef211b146d4cebc~mv2.png",
+        WIX + "ee4b42_49dc9698b72b48159817be796ee8163b~mv2.png",
+        WIX + "ee4b42_ad9acbbbb1ac4dfd9faad4dac34b1a8e~mv2.jpg",
+        WIX + "ee4b42_0959ab5a79384a25a905d62e618f8120~mv2.jpg",
+        WIX + "ee4b42_520239fa736b412f8cb507c9d6f1451a~mv2.jpg",
+        WIX + "ee4b42_1c0b74deb04e4ab3866d72cda897b0a5~mv2.jpg",
+        WIX + "ee4b42_606c16fd615946ccb276a2d8fb23dea3~mv2.jpg",
+        WIX + "ee4b42_bc0ff40dd5e1421693606d41c79d3ece~mv2.jpg",
+        WIX + "ee4b42_bb258885d420422f822931f5609a437b~mv2.jpg",
+        WIX + "ee4b42_689b1970958447deb6737adb9991f59d~mv2.jpg",
+        WIX + "ee4b42_e5020b91f82746f483ee2fdea93eeb0e~mv2.jpg",
+        WIX + "ee4b42_e6f8b5cf561f494c95285c027fa54414~mv2.jpg",
+        WIX + "ee4b42_694a7a34e3c046fd9a90605811b0985c~mv2.jpg"
+      ]
+    },
+    {
+      slug: "gwg-school",
+      year: "2024",
+      category: ["public", "interior"],
+      title: "광영여자고등학교 고교학점제 재구조화",
+      status: "completed",
+      specs: [
+        "Location : 17, Nambusunhwan-ro 30-gil, Yangcheon-gu, Seoul, Korea",
+        "Design : 2024.05 - 2025.03",
+        "Completion : -",
+        "Floor area : -㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint"
+      ],
+      notes: ["with ONJAE architects", "photo by 이건엽"],
+      images: [
+        WIX + "ee4b42_633ebbeaa7cc42e7b0f065f477e46f08~mv2.jpg",
+        WIX + "ee4b42_bf9816ab43a047b1a5c12731448caa8a~mv2.jpg",
+        WIX + "ee4b42_8d564cb39a194d9c8ca56f219d69d188~mv2.jpg",
+        WIX + "ee4b42_cfd7c26f631a4844afbc329f20524307~mv2.jpg",
+        WIX + "ee4b42_b187f25ef5f04427ac883a418bf943da~mv2.jpg",
+        WIX + "ee4b42_59a3fa4d6eb84dfabe37f4dd52ff7212~mv2.jpg",
+        WIX + "ee4b42_5936481ada2a419ea658d7fd476e6467~mv2.jpg",
+        WIX + "ee4b42_cb96ebef82fd48a0a38c7f3e4fad5702~mv2.jpg",
+        WIX + "ee4b42_82d774c593674cd19f0bc3f9bff90abd~mv2.jpg",
+        WIX + "ee4b42_f8d14664853d4470a199bc48cd04cab2~mv2.jpg",
+        WIX + "ee4b42_e18b04b5d9a34da5b279fc2ab2c789c2~mv2.jpg",
+        WIX + "ee4b42_012d46dcee71454c9097836d50893951~mv2.jpg",
+        WIX + "ee4b42_a095994bc3c1457c9a9f6ecffb757d7d~mv2.jpg",
+        WIX + "ee4b42_a35f365b1c194348991fa48bceede40a~mv2.jpg",
+        WIX + "ee4b42_6d1c523fda4c48bfa1b1edac56f91772~mv2.jpg",
+        WIX + "ee4b42_ed46b358fe04456899d7bef06ee808d7~mv2.jpg",
+        WIX + "ee4b42_6568600e9a9c4d8aada6224387c2ab22~mv2.jpg",
+        WIX + "ee4b42_96881d2dc1de40e5904c92b0bff08e7c~mv2.jpg",
+        WIX + "ee4b42_aabb6f979ed246b99a642713668ccb41~mv2.jpg",
+        WIX + "ee4b42_d899bfd4928448cbb84fddf88dcbf6a1~mv2.jpg",
+        WIX + "ee4b42_2a1ba9d7955947c49e7eccff50d8384f~mv2.jpg",
+        WIX + "ee4b42_edf676cc1abd4a11bfb35ee6f31dd1f0~mv2.jpg",
+        WIX + "ee4b42_3e1727a10e934bbba7204c33c03ba1c7~mv2.jpg",
+        WIX + "ee4b42_cd21166f7b49484e92bc281e55ad5cea~mv2.jpg",
+        WIX + "ee4b42_d80273907a274e2aae2393c857567aaf~mv2.jpg",
+        WIX + "ee4b42_8c0393738bbe490db8cd0a2e691532e8~mv2.jpg",
+        WIX + "ee4b42_a6b6ee26372d42e08dc02ab5b07bba12~mv2.png",
+        WIX + "ee4b42_75390ad9e91643589e0bf55189d84939~mv2.png",
+        WIX + "ee4b42_ec06cce565994b0da0cec1ee579cb65c~mv2.png",
+        WIX + "ee4b42_4614c39bba01435f9784fad9c84691dd~mv2.png"
+      ]
+    },
+    {
+      slug: "ys---school---2",
+      year: "2024",
+      category: ["public", "interior"],
+      title: "영신고등학교 고교학점제 재구조화 2차",
+      status: "completed",
+      specs: [
+        "Location : 18, Daebangcheon-ro 14-gil, Yeongdeungpo-gu, Seoul, Korea",
+        "Design : 2024.09 - 2025.02",
+        "Completion : -",
+        "Floor area : 344.05㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint, Interior film"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_2eb769963f1542c8af3ed2f14e114f6c~mv2.jpg",
+        WIX + "ee4b42_a5021745ec2e4d80a47a7020aaf940a7~mv2.jpg",
+        WIX + "ee4b42_bfc2004d7ffe4106ba8a0ee367eb771e~mv2.jpg",
+        WIX + "ee4b42_a14a2fc23cbb42e48bd682741167779d~mv2.jpg",
+        WIX + "ee4b42_fe4a86fd703d404d9b76e6134c1d327c~mv2.jpg",
+        WIX + "ee4b42_0ba93f426a62452ca4d9c56bc490c8b8~mv2.jpg",
+        WIX + "ee4b42_0b652d3fb0e849ed8da11f446cad0632~mv2.jpg",
+        WIX + "ee4b42_722f7024f00749c190d151c7561364d1~mv2.jpg",
+        WIX + "ee4b42_7881f85b69404fcfa1d40b0089e84584~mv2.jpg",
+        WIX + "ee4b42_679821f7cde445df80b58356a9d8f777~mv2.jpg",
+        WIX + "ee4b42_0f2f55c57e2841939428910273712c0e~mv2.jpg",
+        WIX + "ee4b42_851beb813bed4b1590265aa308d7a699~mv2.jpg",
+        WIX + "ee4b42_b0b840f10f1946c286d8b1cc7482fcd4~mv2.png",
+        WIX + "ee4b42_cf434094f1614c6f965e181c3b1a5846~mv2.png",
+        WIX + "ee4b42_aed55848085f4b9988aaa196908e6074~mv2.png"
+      ]
+    },
+
+    // 2023 (6건)
+    {
+      slug: "일동-구룡경로당",
+      year: "2023",
+      category: ["public", "interior"],
+      title: "일동 구룡경로당",
+      status: "out of selection",
+      specs: [
+        "Location : 10, Guryongdong-gil, Sangnok-gu, Ansan-si, Gyeonggi-do, Korea",
+        "Design : 2023.01 - 2023.04",
+        "Completion : Out of selection",
+        "Site area : 728.6 ㎡",
+        "Building area : 436.35 ㎡",
+        "Total floor area : 1,179.41 ㎡",
+        "Building use : Welfare facility",
+        "Structure : RC",
+        "Exterior finish : Wood panel, Block tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_eaeef2fde1e545359069dca1f4d483c5~mv2.jpg",
+        WIX + "ee4b42_fc915c31c43847dc8d4867c58c3dd3c2~mv2.png",
+        WIX + "ee4b42_b72be6d8eb424af7ac96e31cb1c57443~mv2.png",
+        WIX + "ee4b42_048db9b76ba849109acb1fde55104862~mv2.png",
+        WIX + "ee4b42_fd908bb90fc6435e9653c3e94ea522ba~mv2.png",
+        WIX + "ee4b42_c9fa6f78a59d409487fc94b6d67bf53a~mv2.png",
+        WIX + "ee4b42_1f986f98d3744db98c44a3b5b1b5fc50~mv2.png",
+        WIX + "ee4b42_bc252ed73c3c4c6d8b84a7717217982e~mv2.png",
+        WIX + "ee4b42_781ff11f9adb47f8af42951a7da661cf~mv2.png",
+        WIX + "ee4b42_5569c034dc2e473aa6498166fcbc37c7~mv2.jpg",
+        WIX + "ee4b42_049435da7ae746fc88cefbe004293c2b~mv2.jpg",
+        WIX + "ee4b42_c0c0c251efdf42e3a2de07d43403020f~mv2.jpg",
+        WIX + "ee4b42_d4c6a763df8d4b33bfde0ab2ca22de73~mv2.jpg"
+      ]
+    },
+    {
+      slug: "ys---school",
+      year: "2023",
+      category: ["public", "interior"],
+      title: "영신고등학교 고교학점제 재구조화 1차",
+      status: "completed",
+      specs: [
+        "Location : 18, Daebangcheon-ro 14-gil, Yeongdeungpo-gu, Seoul, Korea",
+        "Design : 2023.10 - 2023.12",
+        "Completion : 2024.02",
+        "Floor area : 1,548.39 ㎡",
+        "Building use : Education",
+        "Interior finish : MDF board, Paint, Interior film"
+      ],
+      notes: ["with ONJAE architects"],
+      images: [
+        WIX + "ee4b42_09bd45f97f4d4e08920fc4d3f021a03b~mv2.png",
+        WIX + "ee4b42_48bc26876a384e80b83b811b798e9c8f~mv2.jpg",
+        WIX + "ee4b42_e758b3f2ffe14fdc84da5f42fe28efb5~mv2.jpg",
+        WIX + "ee4b42_bcbd10f1e0f1482d9b25ccfd86ccdd72~mv2.jpg",
+        WIX + "ee4b42_6552cea21fe34c059ef4e02b4df753db~mv2.jpg",
+        WIX + "ee4b42_06abf03065654877b20eecdf98bf2bd0~mv2.png",
+        WIX + "ee4b42_dbc148932ce042c29b63bc6a73ff6460~mv2.png",
+        WIX + "ee4b42_2fe590f0fb9d4c91845093fe3336e38a~mv2.png",
+        WIX + "ee4b42_723f9e9eaaae4d619ba86a955940074e~mv2.png",
+        WIX + "ee4b42_3cf7464e73fb4710b08417f8c2af4345~mv2.png",
+        WIX + "ee4b42_3de50e6f6fc4472aa2490077078789fe~mv2.png",
+        WIX + "ee4b42_aedc4e2d160449b29245ae9e36f47be2~mv2.png",
+        WIX + "ee4b42_53f04488e0db4b499e1b2323f55ff85e~mv2.png"
+      ]
+    },
+    {
+      slug: "춘천시의회증축",
+      year: "2023",
+      category: ["public", "competition"],
+      title: "춘천시의회 증축",
+      status: "out of selection",
+      specs: [
+        "Location : 11, Sicheong-gil, Chuncheon-si, Gangwon-do, Korea",
+        "Design : 2023.05 - 2023.06",
+        "Completion : Out of selection",
+        "Site area : 25,247.1 ㎡",
+        "Building area : 2,271.95 ㎡",
+        "Total floor area : 2,005.52 ㎡",
+        "Building use : Public Offices",
+        "Structure : RC",
+        "Exterior finish : UHPC panel",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_ae0dd7fc19234841929be835bcce3b06~mv2.jpg",
+        WIX + "ee4b42_9a01586921c944e18aa799a3b3043332~mv2.png",
+        WIX + "ee4b42_268224d3fef2488e9fce4f598fa65089~mv2.png",
+        WIX + "ee4b42_c97521a0b8864a739f6138e0855b9b03~mv2.png",
+        WIX + "ee4b42_835d450821444565bf74fb7eeb3226a6~mv2.png"
+      ]
+    },
+    {
+      slug: "충남형-농촌리브투게더",
+      year: "2023",
+      category: ["housing", "competition"],
+      title: "충남형 농촌리브투게더",
+      status: "2nd prize",
+      specs: [
+        "Location : Eunsan-myeon, Buyeo-gun, Chungcheongnam-do, Korea",
+        "Design : 2023.10 - 2023.11",
+        "Completion : 2nd prize",
+        "Site area : 10,845 ㎡",
+        "Building area : 131.52 ㎡ / 135.63 ㎡ / 134.29 ㎡ (By unit)",
+        "Total floor area : 104.51 ㎡ / 104.51 ㎡ / 103.24 ㎡ (By unit)",
+        "Building use : Housing complex",
+        "Structure : Variation",
+        "Exterior finish : Variation",
+        "Interior finish : Variation"
+      ],
+      notes: ["with SOBO architects"],
+      images: [
+        WIX + "ee4b42_85c9975402554212a9a8677f24eeee9d~mv2.jpg",
+        WIX + "ee4b42_455aa6554ab34d679c04de595ba284db~mv2.jpg",
+        WIX + "ee4b42_6c190872c56a4d8896e70e1a1b816164~mv2.jpg",
+        WIX + "ee4b42_d6b40b5c96a249c0b440790837c5b3c9~mv2.jpg",
+        WIX + "ee4b42_eb91639d61b546cebcd50a322cce28db~mv2.jpg"
+      ]
+    },
+    {
+      slug: "제2세종문화회관",
+      year: "2023",
+      category: ["public", "competition"],
+      title: "여의도공원 제2세종문화회관",
+      status: "out of selection",
+      specs: [
+        "Location : 120, Yeouigongwon-ro, Yeongdeungpo-gu, Seoul, Korea",
+        "Design : 2023.05 - 2023.08",
+        "Completion : Out of selection",
+        "Site area : 33,996.63 ㎡",
+        "Building area : 11,730.24 ㎡",
+        "Total floor area : 54,835.80 ㎡",
+        "Building use : Culture complex",
+        "Structure : RC",
+        "Exterior finish : UHPC panel, stone panel",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_f9b40785786649a989ee12ef1931b165~mv2.jpg",
+        WIX + "ee4b42_6280736c35764979a97b492fb6c42d7c~mv2.jpg",
+        WIX + "ee4b42_f2eaba7c064e494fa4a671f55959dbe8~mv2.jpg",
+        WIX + "ee4b42_019778a49d3445fa9faff42252fb685c~mv2.jpg",
+        WIX + "ee4b42_d3efe7ab3fa64e9d99f9b623be733ada~mv2.jpg",
+        WIX + "ee4b42_8925ad5bd19c4eefbca6ddfe89a5c355~mv2.jpg",
+        WIX + "ee4b42_4ec3475e3b354d8dada2143b1b4f15fc~mv2.jpg",
+        WIX + "ee4b42_10d6e5143bf14c31a545650e36e13b18~mv2.jpg",
+        WIX + "ee4b42_9452d0b3ba9440d29b4808b008cf6877~mv2.jpg",
+        WIX + "ee4b42_e7d7292674f143069a063eda982a68ac~mv2.jpg",
+        WIX + "ee4b42_85c60976b2c24611ad84f9ba04f7eb81~mv2.jpg",
+        WIX + "ee4b42_4fc7724af220480fb168a96e6b308f5d~mv2.jpg",
+        WIX + "ee4b42_1cb3319c2a9244ecb218ac16b69c8225~mv2.jpg"
+      ]
+    },
+    {
+      slug: "남양읍-행정복지센터",
+      year: "2023",
+      category: ["public", "competition"],
+      title: "남양읍 행정복지센터",
+      status: "out of selection",
+      specs: [
+        "Location : 192-5, Namyangseongji-ro, Namyang-eup, Hwaseong-si, Gyeonggi-do, Korea",
+        "Design : 2023.08 - 2023.09",
+        "Completion : Out of selection",
+        "Site area : 9,772.00 ㎡",
+        "Building area : 2,071.25 ㎡",
+        "Total floor area : 5,342.96 ㎡",
+        "Building use : Public Offices, Welfare facility",
+        "Structure : RC",
+        "Exterior finish : Limestone Panel",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_e44c825e43a24c81a20eb21e74e1262e~mv2.jpg",
+        WIX + "ee4b42_43c9abdc74fd4f0692245c92e37a1292~mv2.jpg",
+        WIX + "ee4b42_99a16f84e8a040cea42281dd3eeaefef~mv2.jpg",
+        WIX + "ee4b42_a2f942c4b44b48dab87af4de003ca10d~mv2.jpg",
+        WIX + "ee4b42_21821593487c4b2f9061c9acd85167e6~mv2.jpg",
+        WIX + "ee4b42_08ec109e53d24a3bae73a5efc036f3b4~mv2.jpg",
+        WIX + "ee4b42_248d8825fb1e4519954f6fcf9e6b0f7b~mv2.png",
+        WIX + "ee4b42_d231b96073994f52ba6bd1994584ebdd~mv2.png",
+        WIX + "ee4b42_c7aa863076a5447b9178f19cf4858af8~mv2.png",
+        WIX + "ee4b42_e4dc4811c1cb4b738c1c291bda16ec58~mv2.jpg",
+        WIX + "ee4b42_7ffb05130aa1476693494b47d23fdaf5~mv2.jpg",
+        WIX + "ee4b42_6f65d662632c4d1d825ed328554cb424~mv2.jpg",
+        WIX + "ee4b42_739b5a3142a6486aab7abd1a1c9765dd~mv2.jpg"
+      ]
+    },
+
+    // 2022 (7건)
+    {
+      slug: "iw---sports",
+      year: "2022",
+      category: ["interior"],
+      title: "일원 스포츠문화센터",
+      status: "completed",
+      specs: [
+        "Location : 22, Yeongdong-daero, Gangnam-gu, Seoul, Korea",
+        "Design : 2022.1 - 2022.3",
+        "Completion : 2022.06",
+        "Floor area : 231 ㎡",
+        "Building use : Apartment amenities",
+        "Interior finish : Tile, S'STL, Stucco, Paint, Wood floor"
+      ],
+      notes: ["with 진짜선수", "photo by 이선수"],
+      images: [
+        WIX + "ee4b42_1bad7868c8224d5dbaece5a9f41ad5e0~mv2.jpg",
+        WIX + "ee4b42_e71494ce23c54deeb18058b77fdfd080~mv2.jpg",
+        WIX + "ee4b42_c786b14eb2ec40a1ac38f5191e34f90e~mv2.jpg",
+        WIX + "ee4b42_da06ab480736461f9f37f23d0c3c5a87~mv2.jpg",
+        WIX + "ee4b42_7bc285f82a1941038bbff77287a4868a~mv2.jpg",
+        WIX + "ee4b42_558d5b4052e54b1386a0db09ea3454d7~mv2.jpg",
+        WIX + "ee4b42_5d4356d5b6c4471e8042ff45dc32d3b9~mv2.jpg",
+        WIX + "ee4b42_8205a821c2b7496b932ad5b2fc5b1cc3~mv2.jpg",
+        WIX + "ee4b42_7ad865e069ee469eb8837973f261fca2~mv2.jpg",
+        WIX + "ee4b42_c1e719773637449ebe7b4c10d472789d~mv2.jpg",
+        WIX + "ee4b42_3e9bd218c61d4f58b06f84a2db659a81~mv2.jpg",
+        WIX + "ee4b42_e9f15772390549a7a8aa1153abfa4a65~mv2.jpg",
+        WIX + "ee4b42_f9c5b94507244116a47ba3a9f94290e1~mv2.jpg",
+        WIX + "ee4b42_91d79889ec754948a380803fd19fc907~mv2.jpg",
+        WIX + "ee4b42_a1625922b7ee4a82a4c2e72f42fd7e4d~mv2.png"
+      ]
+    },
+    {
+      slug: "해남-우수영유스호스텔",
+      year: "2022",
+      category: ["public", "competition"],
+      title: "해남 우수영유스호스텔",
+      status: "3rd prize",
+      specs: [
+        "Location : 12-36, Gwangwang leisure-ro, Munnae-myeon, Haenam-gun, Jeollanam-do, Korea",
+        "Design : 2022.07",
+        "Completion : 3rd prize",
+        "Site area : 28,866.00 ㎡",
+        "Building area : 2,148.60 ㎡",
+        "Total floor area : 4,909.02 ㎡",
+        "Building use : Accommodation facility / Cultural facility",
+        "Structure : RC / Steel-frame structure",
+        "Exterior finish : Block tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_4e47936cafbc469cbc997fb59efcb330~mv2.png",
+        WIX + "ee4b42_688e8f9410bc4b5195b88251b7e05210~mv2.jpg",
+        WIX + "ee4b42_8183fde50f5541afaa2637532a0ecfb8~mv2.jpg",
+        WIX + "ee4b42_01ca962d038a4badb6a0ada28f08332e~mv2.jpg",
+        WIX + "ee4b42_2cdbab750f7b4f009d8bd59b9c3694fc~mv2.jpg",
+        WIX + "ee4b42_e91f276427d6460c9d6047b81d84b3cf~mv2.jpg",
+        WIX + "ee4b42_214da8430a72476c9ec138966069a14f~mv2.jpg",
+        WIX + "ee4b42_3cd44d882ef0447f81e42af3e830f7b2~mv2.jpg",
+        WIX + "ee4b42_4c2b80c2ad794a988ccde21edb9affa9~mv2.jpg",
+        WIX + "ee4b42_cd032d581f444204bbba1bae6ba46b1f~mv2.png",
+        WIX + "ee4b42_f230a042b6314cff8a3912ff89751782~mv2.png",
+        WIX + "ee4b42_566a5c486b944c2db47cfd44f64bd712~mv2.png",
+        WIX + "ee4b42_f3207f7ee1074e59a6f27a618614aaa6~mv2.png"
+      ]
+    },
+    {
+      slug: "신평-행복잇슈센터",
+      year: "2022",
+      category: ["public", "competition"],
+      title: "신평 행복잇슈센터",
+      status: "out of selection",
+      specs: [
+        "Location : 133-12, Geosan-ri, Sinpyeong-myeon, Dangjin-si, Korea",
+        "Design : 2022.12 - 2023.01",
+        "Completion : Out of selection",
+        "Site area : 4,866 ㎡",
+        "Building area : 1,498.11 ㎡",
+        "Total floor area : 1,492.20 ㎡",
+        "Building use : Welfare facility",
+        "Structure : Wooden structure",
+        "Exterior finish : Wood panel, Metal panel, Block tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_de5b8e24b89642f583eb4fa4238c42a6~mv2.jpg",
+        WIX + "ee4b42_fc154b260bd64173b424177b5ab1a64a~mv2.png",
+        WIX + "ee4b42_cb578d14f7034503a27c2e9eca711e33~mv2.png",
+        WIX + "ee4b42_30b0493667834d9a817f7015d529ced5~mv2.png",
+        WIX + "ee4b42_779411dd5c384024b80add154c8f9e8e~mv2.png",
+        WIX + "ee4b42_5ee2c4d6d1a34a5d92087883f23c80be~mv2.png",
+        WIX + "ee4b42_fb1897936ea94ff382893ac319a8f393~mv2.png",
+        WIX + "ee4b42_84ab306c267846d2a105483855f33fa5~mv2.png",
+        WIX + "ee4b42_e30e53a6d6c34e58a48ae81c43fa40f7~mv2.png",
+        WIX + "ee4b42_13a36945316149a9b9e04b893cee610b~mv2.png",
+        WIX + "ee4b42_7334a30ff5b44a1199c040791b3f5aef~mv2.png",
+        WIX + "ee4b42_46f23e84b74c4d1a938ab4ae3ac06d1e~mv2.png",
+        WIX + "ee4b42_055482798d0f4ae6acab9eda1f1a08d2~mv2.png"
+      ]
+    },
+    {
+      slug: "fgf---interior",
+      year: "2022",
+      category: ["commercial", "interior"],
+      title: "도곡동 F&B 인테리어",
+      status: "completed",
+      specs: [
+        "Location : 650-1, Sinsa-dong, Gangnam-gu, Seoul, Korea",
+        "Design : 2022.08 - 2022.09",
+        "Completion : 2023.04",
+        "Floor area : 274.19 ㎡",
+        "Building use : F&B",
+        "Interior finish : Plaster"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_f2461704fd424bc9bd8c3190ae5e9087~mv2.png",
+        WIX + "ee4b42_51c6208f1b884d5d83eef6e4997f5f36~mv2.jpg",
+        WIX + "ee4b42_072618cb6d614dd0a7959465d0ef9084~mv2.jpg",
+        WIX + "ee4b42_7ef52c1ffdc44167845ff6d1f23b44fe~mv2.jpg",
+        WIX + "ee4b42_f22bf1bde07640639c61e6dd1dbe55d4~mv2.jpeg",
+        WIX + "ee4b42_61b7c9c81afc45b69d6f38bcaa3eb3d9~mv2.jpg",
+        WIX + "ee4b42_c3c2d83ef92142349fb0fddb847ff74a~mv2.jpg",
+        WIX + "ee4b42_c8a5107b89b848e9afb5e837dc092d8d~mv2.jpg",
+        WIX + "ee4b42_8b37dd48341047829cee2dcefe29c671~mv2.jpg",
+        WIX + "ee4b42_c2dea8a8d2f44ea39f2dbb63ef87a1b0~mv2.png",
+        WIX + "ee4b42_c3ee57d051bc4d2cb96ace7795f74ece~mv2.png",
+        WIX + "ee4b42_4e19055bbaae48cc8cfc613d318ac062~mv2.png",
+        WIX + "ee4b42_1a73a814d920413e99317947d2d11e0c~mv2.png"
+      ]
+    },
+    {
+      slug: "jch---membrane",
+      year: "2022",
+      category: [],
+      title: "진천 국가대표선수촌 전천후 육상트랙",
+      status: "completed",
+      specs: [
+        "Location : 105, Seonsuchon-ro, Gwanghyewon-myeon, Jincheon-gun, Chungcheongbuk-do, Korea",
+        "Design : 2022.05 -2022.11",
+        "Completion : 2023.06",
+        "Site area : 853,162.80 ㎡",
+        "Building use : Sports",
+        "Structure : Steel structure",
+        "Exterior finish : PVF"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_d48e47f2f2034ceb9f81219e7e957b57~mv2.png",
+        WIX + "ee4b42_1316467583674ef3a2fcf912ac1ab4e0~mv2.png",
+        WIX + "ee4b42_cdb75af76742442ba5bb3f61bb2ce5e9~mv2.jpg",
+        WIX + "ee4b42_300215666f30428ba898b64ad0aa0bbe~mv2.jpg",
+        WIX + "ee4b42_1f5662af111a4b95b92ccf1598ab6d98~mv2.jpg",
+        WIX + "ee4b42_98a01fbc70074bc7b2c8123462dec734~mv2.jpg",
+        WIX + "ee4b42_3d02f69d4d78423d893cd745bab463eb~mv2.jpg"
+      ]
+    },
+    {
+      slug: "김천-맘지원센터",
+      year: "2022",
+      category: ["public", "competition"],
+      title: "김천 맘지원센터",
+      status: "out of selection",
+      specs: [
+        "Location : 47, Saedongne-gil, Gimcheon-si, Gyeongsangbuk-do, Korea",
+        "Design : 2022.10 - 2022.12",
+        "Completion : Out of selection",
+        "Site area : 2,330 ㎡",
+        "Building area : 763.69 ㎡",
+        "Total floor area : 2,614.99 ㎡",
+        "Building use : Child and geriatric welfare institution",
+        "Structure : RC",
+        "Exterior finish : Block tile",
+        "Interior finish : -"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_2174a7aed464471d87c33186b31836c2~mv2.png",
+        WIX + "ee4b42_95c980524d9442d0a87a31c9ebf8b427~mv2.png",
+        WIX + "ee4b42_b907b6d4bb4d4b8c8f670bada83746c7~mv2.png",
+        WIX + "ee4b42_b88cf136c44a4ea29969997679912c82~mv2.png",
+        WIX + "ee4b42_d4f1f1244d1244e78e4809051b387fe8~mv2.png",
+        WIX + "ee4b42_094246c2554f4c43b71181bc00bdd192~mv2.png",
+        WIX + "ee4b42_534bae5302a946c9973a3ee4ff8d375c~mv2.png",
+        WIX + "ee4b42_619f569ce5ac4223a4cdcfebe773e474~mv2.png"
+      ]
+    },
+    {
+      slug: "dw---library",
+      year: "2022",
+      category: ["public", "interior"],
+      title: "동원중학교 꿈담교실",
+      status: "completed",
+      specs: [
+        "Location : 32, Yangwonyeok-ro, Jungnang-gu, Seoul, Korea",
+        "Design : 2022.07 - 2022.11",
+        "Completion : 2023.02",
+        "Floor area : 254.63 ㎡",
+        "Building use : Education",
+        "Interior finish : Birch plywood, LPM board, Paint"
+      ],
+      notes: [],
+      images: [
+        WIX + "ee4b42_b4f4fbf308184500a17171a3c6178a28~mv2.png",
+        WIX + "ee4b42_89bdef87397d484dacb0ab8fc2ed8b32~mv2.png",
+        WIX + "ee4b42_b15e5c049e594e4c8322c8d0ef1e7481~mv2.jpg",
+        WIX + "ee4b42_5290c0bc57fb44798a313aafb7299cb4~mv2.jpg",
+        WIX + "ee4b42_db98b71170c6497ba3c82133bd49d3aa~mv2.jpg",
+        WIX + "ee4b42_b135c0e3f64e48f1b5b4f3eb7d0a31a6~mv2.png"
+      ]
+    }
+  ];
+})(window);
